@@ -1,0 +1,16 @@
+[package]
+edition = "2021"
+name = "usb-test"
+version = "0.1.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.86"
+nusb = "0.1.9"
+strum = { version = "0.26.1", features = ["derive"] }
+
+[profile.release]
+lto = "fat"
+panic = "abort"
+strip = "symbols"
